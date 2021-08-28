@@ -30,7 +30,11 @@ namespace Directory
             InitializeComponent();
             
             _dataBaseWorker = dataBaseWorker;
-            
+            NameTextBox.Text = "";
+            SurnameTextBox.Text = "";
+            lastNameTextBox.Text = "";
+            PhoneTextBox.Text = "";
+            AdresTextBox.Text = "";
         }
 
         public void SetDataPerson(Person person = null) {
