@@ -56,7 +56,7 @@ namespace LogicLayer.Workers
 
         public List<Person> GetPeople()
         {
-            throw new NotImplementedException();
+            return context.people.Include("phone").ToList();
         }
 
         public List<Phone> GetPhones()
