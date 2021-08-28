@@ -57,8 +57,8 @@ namespace Directory
             _person.surname = SurnameTextBox.Text;
             _person.lastName = lastNameTextBox.Text;
             _person.adres = AdresTextBox.Text;
-            
-            _person.phone = new Phone();
+
+            _person.phone = _person.phone == null ? _person.phone = new Phone() : _person.phone;
             _person.phone.phone = PhoneTextBox.Text;
             _person.phone.person = _person;
 

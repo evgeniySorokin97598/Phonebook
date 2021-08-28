@@ -67,7 +67,7 @@ namespace Directory
                     if(findByname != null) ListPhones.ItemsSource = findByname;
                     break;
                 case "поиск по фамилии":
-                    var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.ToLower().Contains(FindInfo.Text.ToLower()) );
+                    var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.ToLower().Contains(FindInfo.Text.ToLower()));
                     if (findBySurname != null) ListPhones.ItemsSource = findBySurname;
                     break;
                 case "поиск по отчеству":
