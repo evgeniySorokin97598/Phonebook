@@ -29,7 +29,7 @@ namespace Directory
 
 
 
-        //ObservableCollection<Phone> phones = new ObservableCollection<Phone>();
+        
 
        
         public MainWindow()
