@@ -14,9 +14,14 @@ namespace ModelsLayer.DataBaseModels
         [Key]
         [ForeignKey("person")]
         public long Id { get; set; }
-
-
         public Person person { get; set; } 
-        public string phone { get; set; } 
+        public string phone { get; set; }
+
+        public bool CheckNull() {
+            if (string.IsNullOrEmpty(phone)) return false;
+            else return true;
+        
+        
+        }
     } 
 }

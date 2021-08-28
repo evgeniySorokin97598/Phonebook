@@ -18,8 +18,15 @@ namespace ModelsLayer.DataBaseModels
         public string surname { get; set; }
         public string lastName { get; set; }
         public string adres { get; set; }
-
         public Phone phone { get; set; }
+
+        public bool CheckNull() {
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(adres)) return false;
+            else return true;
+        
+        
+        
+        }
 
     }
 }
