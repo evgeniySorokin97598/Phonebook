@@ -42,6 +42,8 @@ namespace Directory
         {
             var t = ListPhones.SelectedItem as Phone;
             dataBaseWorker.DeletePhone(t);
+            var phones = dataBaseWorker.GetPhones();
+            ListPhones.ItemsSource = phones;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -82,12 +84,14 @@ namespace Directory
                     break;
             }
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var phones = dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;
         }
+
+       
+
     }
 
 

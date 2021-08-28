@@ -28,7 +28,6 @@ namespace Directory
         public PersonInfo(IDataBase dataBaseWorker)
         {
             InitializeComponent();
-            
             _dataBaseWorker = dataBaseWorker;
             NameTextBox.Text = "";
             SurnameTextBox.Text = "";
@@ -48,7 +47,6 @@ namespace Directory
                 lastNameTextBox.Text = person.lastName;
                 PhoneTextBox.Text = person.phone.phone;
                 AdresTextBox.Text = person.adres;
-
             }
             else {
                 _person = new Person();
@@ -68,10 +66,13 @@ namespace Directory
             _person.phone.phone = PhoneTextBox.Text;
             _person.phone.person = _person;
 
+
             if (_person.CheckNull() == true && _person.phone.CheckNull() == true)
             {
+
                 if (isNewPerson == true) _dataBaseWorker.AddPerson(_person);
                 else _dataBaseWorker.ChangePerson(_person);
+               
                 Close();
             }
             else MessageBox.Show("Не все поля заполнены");
