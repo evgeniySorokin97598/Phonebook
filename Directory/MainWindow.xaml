@@ -1,0 +1,60 @@
+﻿<Window x:Class="Directory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Directory"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Menu HorizontalAlignment="Left" Margin="0,150,0,181" Width="130">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="поиск по имени" Click="Find_Click_Button" />
+            <MenuItem Header="поиск по фамилии" Click="Find_Click_Button" />
+            <MenuItem Header="поиск по отчеству" Click="Find_Click_Button" />
+            <MenuItem Header="поиск по телефону" Click="Find_Click_Button"/>
+        </Menu>
+
+        <ListView x:Name="ListPhones" Margin="198,125,69,10">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=person.name}">имя</GridViewColumn>
+                    <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=person.surname}">фамилия</GridViewColumn>
+                    <GridViewColumn Width="130"  DisplayMemberBinding="{Binding Path=person.lastName}">отчетство</GridViewColumn>
+                    <GridViewColumn  Width= "130" DisplayMemberBinding="{Binding Path=phone}">телефон</GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+            <ListView.ItemTemplate  >
+                <DataTemplate >
+                    <WrapPanel >
+                        <TextBlock Text="{Binding phone.person.name}"/>
+                        <TextBlock Text="{Binding phone.person.surname}"/>
+                        <TextBlock Text="{Binding phone.person.lastName}"/>
+                        <TextBlock Text="{Binding phone.phone}"/>
+                    </WrapPanel>
+                </DataTemplate>
+
+
+
+            </ListView.ItemTemplate>
+            <ListView.ContextMenu >
+                <ContextMenu x:Name="ContextMenu">
+                    <MenuItem Header="изменить данные" Click="Change_button_Click" ></MenuItem>
+                    <MenuItem Header="Удалить" Click="Delete_button_Click" ></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+
+
+        </ListView>
+        <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
+        <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_1"/>
+    </Grid>
+</Window>
