@@ -71,7 +71,6 @@ namespace Directory
                 case "поиск по фамилии":
                     var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.ToLower().Contains(FindInfo.Text.ToLower()) );
                     if (findBySurname != null) ListPhones.ItemsSource = findBySurname;
-                    
                     break;
                 case "поиск по отчеству":
                     var findByLastName = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.lastName.ToLower().Contains(FindInfo.Text.ToLower()));
@@ -81,7 +80,6 @@ namespace Directory
                     var findByPhone = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.phone.ToLower().Contains(FindInfo.Text.ToLower()));
                     if (findByPhone != null) ListPhones.ItemsSource = findByPhone;
                     break;
-
             }
         }
 

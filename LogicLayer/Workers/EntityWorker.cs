@@ -16,7 +16,6 @@ namespace LogicLayer.Workers
         public EntityWorker()
         {
             context = new EntityContext();
-
         }
 
         public void AddPerson(Person person)

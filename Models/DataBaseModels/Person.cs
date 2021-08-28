@@ -23,9 +23,6 @@ namespace ModelsLayer.DataBaseModels
         public bool CheckNull() {
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(adres)) return false;
             else return true;
-        
-        
-        
         }
 
     }
