@@ -26,12 +26,6 @@ namespace Directory
     public partial class MainWindow : Window
     {
         private static IDataBase dataBaseWorker;
-
-
-
-        
-
-       
         public MainWindow()
         {
             InitializeComponent();
