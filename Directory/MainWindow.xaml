@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Directory"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Phonebook" Height="450" Width="800">
 
     <Grid>
-        <Menu HorizontalAlignment="Left" Margin="0,150,0,181" Width="130">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="703*"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Margin="0,150,0,181" Width="130" Grid.ColumnSpan="2">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel />
@@ -20,7 +24,7 @@
             <MenuItem Header="поиск по телефону" Click="Find_Click_Button"/>
         </Menu>
 
-        <ListView x:Name="ListPhones" Margin="198,125,69,10">
+        <ListView x:Name="ListPhones" Margin="108.557,125,69,10" Grid.Column="1">
 
             <ListView.View>
                 <GridView>
@@ -53,8 +57,8 @@
 
 
         </ListView>
-        <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="NewPerson_Click"/>
-        <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Update_List_Click"/>
+        <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="NewPerson_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Update_List_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
