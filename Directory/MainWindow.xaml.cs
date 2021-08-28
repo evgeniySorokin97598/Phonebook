@@ -36,16 +36,12 @@ namespace Directory
             dataBaseWorker = new EntityWorker();
             var phones = dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;
-            
-
-
         }
 
         private void Delete_button_Click(object sender, RoutedEventArgs e)
         {
             var t = ListPhones.SelectedItem as Phone;
-            dataBaseWorker.DeletePhone(t.Id);
-            
+            dataBaseWorker.DeletePhone(t);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -69,20 +65,20 @@ namespace Directory
           
             switch (menuItem.Header) {
                 case "поиск по имени":
-                    var findByname =  dataBaseWorker.GetPhones().Where(p => p.person.name.Contains(FindInfo.Text));
+                    var findByname =  dataBaseWorker.GetPhones().Where(p => p.person.name.ToLower().Contains(FindInfo.Text.ToLower()));
                     if(findByname != null) ListPhones.ItemsSource = findByname;
                     break;
                 case "поиск по фамилии":
-                    var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.Contains(FindInfo.Text) );
+                    var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.ToLower().Contains(FindInfo.Text.ToLower()) );
                     if (findBySurname != null) ListPhones.ItemsSource = findBySurname;
                     
                     break;
                 case "поиск по отчеству":
-                    var findByLastName = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.lastName.Contains(FindInfo.Text));
+                    var findByLastName = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.lastName.ToLower().Contains(FindInfo.Text.ToLower()));
                     if (findByLastName != null) ListPhones.ItemsSource = findByLastName;
                     break;
                 case "поиск по телефону":
-                    var findByPhone = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.phone.Contains(FindInfo.Text));
+                    var findByPhone = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.phone.ToLower().Contains(FindInfo.Text.ToLower()));
                     if (findByPhone != null) ListPhones.ItemsSource = findByPhone;
                     break;
 

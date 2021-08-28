@@ -48,11 +48,9 @@ namespace LogicLayer.Workers
             context.SaveChanges();
         }
 
-        public void DeletePhone(long id)
+        public void DeletePhone(Phone phone)
         {
-            Phone findPhone = context.phones.Find(id);
-            context.phones.Remove(findPhone);
-            
+            context.phones.Remove(phone);
             context.SaveChanges();
         }
 

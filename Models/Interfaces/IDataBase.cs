@@ -13,7 +13,7 @@ namespace ModelsLayer.Interfaces
         void AddPerson(Person person);
         void ChangePhone(Phone phone);
         void ChangePerson(Person person);
-        void DeletePhone(long id);
+        void DeletePhone(Phone phone);
         List<Phone> GetPhones();
         List<Person> GetPeople();
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Directory"
         mc:Ignorable="d"
-        Title="PersonInfo" Height="450" Width="800">
+        Title="PersonInfo" Height="339.344" Width="415.164">
     <Grid>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="116,18,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Label Content="имя" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top"/>
