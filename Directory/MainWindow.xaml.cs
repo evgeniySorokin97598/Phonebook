@@ -41,6 +41,7 @@ namespace Directory
         {
             var t = ListPhones.SelectedItem as Phone;
             dataBaseWorker.DeletePhone(t);
+            
         }
 
         private void NewPerson_Click(object sender, RoutedEventArgs e)
