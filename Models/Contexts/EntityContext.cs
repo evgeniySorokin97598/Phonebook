@@ -20,8 +20,7 @@ namespace ModelsLayer.Contexts
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Person>().HasKey(p => p.Id);
-            //modelBuilder.Entity<Person>().HasRequired(p => p.phone).WithRequiredPrincipal(p => p.person);
+           
         }
        
     }
