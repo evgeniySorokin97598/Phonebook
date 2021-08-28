@@ -50,7 +50,7 @@ namespace LogicLayer.Workers
         public void DeletePhone(Phone phone)
         {
             context.phones.Remove(phone);
-            context.people.Remove(phone.person);
+            
             context.SaveChanges();
         }
 
