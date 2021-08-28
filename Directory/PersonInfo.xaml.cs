@@ -65,7 +65,12 @@ namespace Directory
 
             if (_person.CheckNull() == true && _person.phone.CheckNull() == true)
             {
+                if (_dataBaseWorker.GetPhones().Where(p => p.phone == _person.phone.phone).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("номер телефона уже есть в базе");
+                    return;
 
+                }
                 if (isNewPerson == true) _dataBaseWorker.AddPerson(_person);
                 else _dataBaseWorker.ChangePerson(_person);
                
