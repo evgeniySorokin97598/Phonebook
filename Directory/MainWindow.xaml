@@ -26,7 +26,7 @@
                 <GridView>
                     <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=person.name}">имя</GridViewColumn>
                     <GridViewColumn Width="130" DisplayMemberBinding="{Binding Path=person.surname}">фамилия</GridViewColumn>
-                    <GridViewColumn Width="130"  DisplayMemberBinding="{Binding Path=person.lastName}">отчетство</GridViewColumn>
+                    <GridViewColumn Width="130"  DisplayMemberBinding="{Binding Path=person.lastName}">отчество</GridViewColumn>
                     <GridViewColumn  Width= "130" DisplayMemberBinding="{Binding Path=phone}">телефон</GridViewColumn>
                 </GridView>
             </ListView.View>

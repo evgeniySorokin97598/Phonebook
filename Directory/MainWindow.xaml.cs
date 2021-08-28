@@ -61,7 +61,6 @@ namespace Directory
         private void Find_Click_Button(object sender, RoutedEventArgs e)
         {
             var menuItem = e.Source as MenuItem;
-          
             switch (menuItem.Header) {
                 case "поиск по имени":
                     var findByname =  dataBaseWorker.GetPhones().Where(p => p.person.name.ToLower().Contains(FindInfo.Text.ToLower()));
