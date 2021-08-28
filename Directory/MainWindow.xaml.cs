@@ -26,27 +26,30 @@ namespace Directory
     public partial class MainWindow : Window
     {
         private static IDataBase dataBaseWorker;
-        
+
 
 
         //ObservableCollection<Phone> phones = new ObservableCollection<Phone>();
+
+       
         public MainWindow()
         {
             InitializeComponent();
             dataBaseWorker = new EntityWorker();
+
+
             var phones = dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;
+
         }
 
         private void Delete_button_Click(object sender, RoutedEventArgs e)
         {
             var t = ListPhones.SelectedItem as Phone;
             dataBaseWorker.DeletePhone(t);
-            var phones = dataBaseWorker.GetPhones();
-            ListPhones.ItemsSource = phones;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NewPerson_Click(object sender, RoutedEventArgs e)
         {
             PersonInfo personInfo = new PersonInfo(dataBaseWorker);
             personInfo.SetDataPerson();
@@ -84,7 +87,7 @@ namespace Directory
                     break;
             }
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Update_List_Click(object sender, RoutedEventArgs e)
         {
             var phones = dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;

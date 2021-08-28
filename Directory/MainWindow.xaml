@@ -53,8 +53,8 @@
 
 
         </ListView>
-        <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
+        <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="NewPerson_Click"/>
         <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_1"/>
+        <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Update_List_Click"/>
     </Grid>
 </Window>

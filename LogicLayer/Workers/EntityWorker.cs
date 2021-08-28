@@ -60,7 +60,6 @@ namespace LogicLayer.Workers
 
         public List<Phone> GetPhones()
         {
-            
             return context.phones.Include("person").ToList();
         }
     }
