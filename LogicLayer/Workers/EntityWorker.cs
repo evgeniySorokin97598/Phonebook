@@ -43,7 +43,7 @@ namespace LogicLayer.Workers
 
         public void ChangePhone(Phone phone)
         {
-            var findPhone = context.phones.Where(p => p.phone == phone.phone).FirstOrDefault();
+            var findPhone = context.phones.Find(phone.Id);
             findPhone = phone;
             context.SaveChanges();
         }
