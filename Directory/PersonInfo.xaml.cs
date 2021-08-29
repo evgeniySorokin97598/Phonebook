@@ -62,16 +62,19 @@ namespace Directory
             _person.phone.phone = PhoneTextBox.Text;
             _person.phone.person = _person;
 
-
+            var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
+            if (find != null)
+            {
+                MessageBox.Show("номер телефона уже есть в базе или набран не правильно");
+                return;
+            }
+            
             if (_person.CheckNull() == true && _person.phone.CheckNull() == true)
             {
+
+
                 if (isNewPerson == true) {
-                    var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
-                    if (find != null)
-                    {
-                        MessageBox.Show("номер телефона уже есть в базе или набран не правильно");
-                        return;
-                    }
+                   
                     _dataBaseWorker.AddPerson(_person);
                 }
                 else _dataBaseWorker.ChangePerson(_person);
