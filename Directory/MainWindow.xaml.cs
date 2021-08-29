@@ -65,8 +65,10 @@ namespace Directory
             if (string.IsNullOrEmpty(FindInfo.Text.Trim())) {
                 MessageBox.Show("Поле с искомыми данными не заполнено ");
                 return;
+                
             }
             switch (menuItem.Header) {
+                
                 case "поиск по имени":
                     var findByname =  _dataBaseWorker._finder.FindByName(FindInfo.Text);
                     if(findByname != null) ListPhones.ItemsSource = findByname;
