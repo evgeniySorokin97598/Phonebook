@@ -17,7 +17,7 @@ namespace LogicLayer.Workers
         public EntityWorker()
         {
             _context = new EntityContext();
-            _finder = new EntityFinder(_context);
+            _finder = new EntityFinderWorker(_context);
         }
 
        

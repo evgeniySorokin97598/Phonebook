@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace LogicLayer.Workers
 {
-    class EntityFinder : IFinder
+    class EntityFinderWorker : IFinder
     {
         private EntityContext _context;
 
-        public EntityFinder(EntityContext entityContext) {
+        public EntityFinderWorker(EntityContext entityContext) {
             _context = entityContext;
 
         }
