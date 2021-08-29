@@ -53,7 +53,7 @@ namespace Directory
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string phone = PhoneTextBox.Text;
+            string phone = _person.phone.phone;
             _person.name = NameTextBox.Text;
             _person.surname = SurnameTextBox.Text;
             _person.lastName = lastNameTextBox.Text;
@@ -64,8 +64,6 @@ namespace Directory
             _person.phone.person = _person;
 
             var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
-            
-
             if (_person.CheckNull() == true && _person.phone.CheckNull() == true)
             {
                 if (isNewPerson == true)
