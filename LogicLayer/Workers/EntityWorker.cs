@@ -13,15 +13,11 @@ namespace LogicLayer.Workers
     public class EntityWorker : IDataBase
     {
         private EntityContext _context;
-        public IEnumerable<Phone> _phones { get; set; }
         public IFinder _finder { get; set; }
-        
-
         public EntityWorker()
         {
             _context = new EntityContext();
             _finder = new EntityFinder(_context);
-            _phones = _context.phones;
         }
 
        
@@ -38,7 +34,6 @@ namespace LogicLayer.Workers
         {
             _context.phones.Add(phone);
             _context.people.Add(phone.person);
-            
             _context.SaveChanges();
         }
 
