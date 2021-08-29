@@ -78,9 +78,8 @@ namespace Directory
                     {
                         MessageBox.Show("номер телефона уже есть в базе или набран не правильно, номер не будет изменён");
                         _person.phone.phone = phone;
-                        _dataBaseWorker.ChangePerson(_person);
                     }
-                    else _dataBaseWorker.ChangePerson(_person);
+                     _dataBaseWorker.ChangePerson(_person);
                 }
                
                 Close();
