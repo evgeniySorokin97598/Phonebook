@@ -58,6 +58,7 @@
     <Compile Include="DataBaseModels\Person.cs" />
     <Compile Include="DataBaseModels\Phone.cs" />
     <Compile Include="Interfaces\IDataBase.cs" />
+    <Compile Include="Interfaces\IFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

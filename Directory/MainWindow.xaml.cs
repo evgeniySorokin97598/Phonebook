@@ -25,14 +25,14 @@ namespace Directory
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static IDataBase dataBaseWorker;
+        private static IDataBase _dataBaseWorker;
         public MainWindow()
         {
             InitializeComponent();
-            dataBaseWorker = new EntityWorker();
+            _dataBaseWorker = new EntityWorker();
 
 
-            var phones = dataBaseWorker.GetPhones();
+            var phones = _dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;
 
         }
@@ -40,20 +40,20 @@ namespace Directory
         private void Delete_button_Click(object sender, RoutedEventArgs e)
         {
             var t = ListPhones.SelectedItem as Phone;
-            dataBaseWorker.DeletePhone(t);
+            _dataBaseWorker.DeletePhone(t);
             
         }
 
         private void NewPerson_Click(object sender, RoutedEventArgs e)
         {
-            PersonInfo personInfo = new PersonInfo(dataBaseWorker);
+            PersonInfo personInfo = new PersonInfo(_dataBaseWorker);
             personInfo.SetDataPerson();
             personInfo.Show();
         }
 
         private void Change_button_Click(object sender, RoutedEventArgs e)
         {
-            PersonInfo personInfo = new PersonInfo(dataBaseWorker);
+            PersonInfo personInfo = new PersonInfo(_dataBaseWorker);
             var t = ListPhones.SelectedItem as Phone;
             personInfo.SetDataPerson(t.person);
             personInfo.Show();
@@ -64,26 +64,26 @@ namespace Directory
             var menuItem = e.Source as MenuItem;
             switch (menuItem.Header) {
                 case "поиск по имени":
-                    var findByname =  dataBaseWorker.GetPhones().Where(p => p.person.name.ToLower().Contains(FindInfo.Text.ToLower()));
+                    var findByname =  _dataBaseWorker._finder.FindByName(FindInfo.Text);
                     if(findByname != null) ListPhones.ItemsSource = findByname;
                     break;
                 case "поиск по фамилии":
-                    var findBySurname = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.surname.ToLower().Contains(FindInfo.Text.ToLower()));
+                    var findBySurname = ListPhones.ItemsSource = _dataBaseWorker._finder.FindBySurname(FindInfo.Text);
                     if (findBySurname != null) ListPhones.ItemsSource = findBySurname;
                     break;
                 case "поиск по отчеству":
-                    var findByLastName = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.person.lastName.ToLower().Contains(FindInfo.Text.ToLower()));
+                    var findByLastName = ListPhones.ItemsSource = _dataBaseWorker._finder.FindByLastName(FindInfo.Text);
                     if (findByLastName != null) ListPhones.ItemsSource = findByLastName;
                     break;
                 case "поиск по телефону":
-                    var findByPhone = ListPhones.ItemsSource = dataBaseWorker.GetPhones().Where(p => p.phone.ToLower().Contains(FindInfo.Text.ToLower()));
+                    var findByPhone = ListPhones.ItemsSource = _dataBaseWorker._finder.FindByPhone(FindInfo.Text);
                     if (findByPhone != null) ListPhones.ItemsSource = findByPhone;
                     break;
             }
         }
         private void Update_List_Click(object sender, RoutedEventArgs e)
         {
-            var phones = dataBaseWorker.GetPhones();
+            var phones = _dataBaseWorker.GetPhones();
             ListPhones.ItemsSource = phones;
         }
 

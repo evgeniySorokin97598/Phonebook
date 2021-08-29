@@ -1,4 +1,5 @@
-﻿using ModelsLayer.DataBaseModels;
+﻿using Models.Interfaces;
+using ModelsLayer.DataBaseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace ModelsLayer.Interfaces
 {
     public interface IDataBase
     {
+        IFinder _finder { get; set; }
         void AddPhone(Phone phone);
         void AddPerson(Person person);
         void ChangePhone(Phone phone);
