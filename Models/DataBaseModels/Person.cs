@@ -21,10 +21,10 @@ namespace ModelsLayer.DataBaseModels
         public Phone phone { get; set; }
 
         public bool CheckNull() {
-            if (string.IsNullOrEmpty(name) || 
-                string.IsNullOrEmpty(surname) || 
-                string.IsNullOrEmpty(lastName) || 
-                string.IsNullOrEmpty(adres)) return false;
+            if (string.IsNullOrEmpty(name.Trim()) || 
+                string.IsNullOrEmpty(surname.Trim()) || 
+                string.IsNullOrEmpty(lastName.Trim()) || 
+                string.IsNullOrEmpty(adres.Trim())) return false;
             else return true;
         }
 

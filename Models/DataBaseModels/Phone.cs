@@ -18,7 +18,7 @@ namespace ModelsLayer.DataBaseModels
         public string phone { get; set; }
 
         public bool CheckNull() {
-            if (string.IsNullOrEmpty(phone)) return false;
+            if (string.IsNullOrEmpty(phone.Trim())) return false;
             else return true;
         
         

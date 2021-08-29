@@ -62,6 +62,10 @@ namespace Directory
         private void Find_Click_Button(object sender, RoutedEventArgs e)
         {
             var menuItem = e.Source as MenuItem;
+            if (string.IsNullOrEmpty(FindInfo.Text.Trim())) {
+                MessageBox.Show("Поле с искомыми данными не заполнено ");
+                return;
+            }
             switch (menuItem.Header) {
                 case "поиск по имени":
                     var findByname =  _dataBaseWorker._finder.FindByName(FindInfo.Text);

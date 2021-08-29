@@ -10,7 +10,7 @@ namespace ModelsLayer.Interfaces
 {
     public interface IDataBase
     {
-        IFinder _finder { get; set; }
+        IFinder _finder { get;  set; }
         void AddPhone(Phone phone);
         void AddPerson(Person person);
         void ChangePhone(Phone phone);
