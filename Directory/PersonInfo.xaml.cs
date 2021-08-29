@@ -69,7 +69,7 @@ namespace Directory
                     var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
                     if (find != null)
                     {
-                        MessageBox.Show("номер телефона уже есть в базе");
+                        MessageBox.Show("номер телефона уже есть в базе или набран не правильно");
                         return;
                     }
                     _dataBaseWorker.AddPerson(_person);
