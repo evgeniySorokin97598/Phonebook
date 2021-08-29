@@ -53,7 +53,8 @@ namespace Directory
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string phone = _person.phone.phone;
+            string phone = "";
+            if (_person.phone != null) phone = _person.phone.phone;
             _person.name = NameTextBox.Text;
             _person.surname = SurnameTextBox.Text;
             _person.lastName = lastNameTextBox.Text;
