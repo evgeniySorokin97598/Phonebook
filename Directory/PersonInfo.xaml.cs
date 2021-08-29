@@ -53,6 +53,7 @@ namespace Directory
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string phone = PhoneTextBox.Text;
             _person.name = NameTextBox.Text;
             _person.surname = SurnameTextBox.Text;
             _person.lastName = lastNameTextBox.Text;
@@ -62,19 +63,25 @@ namespace Directory
             _person.phone.phone = PhoneTextBox.Text;
             _person.phone.person = _person;
 
+            var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
+            
 
             if (_person.CheckNull() == true && _person.phone.CheckNull() == true)
             {
-                if (isNewPerson == true) {
-                    var find = _dataBaseWorker._finder.FindByPhone(PhoneTextBox.Text).FirstOrDefault();
+                if (isNewPerson == true)
+                {
+                    if (find != null) MessageBox.Show("номер телефона уже есть в базе или набран не правильно");
+                    else _dataBaseWorker.AddPerson(_person);
+                }
+                else {
                     if (find != null)
                     {
-                        MessageBox.Show("номер телефона уже есть в базе или набран не правильно");
-                        return;
+                        MessageBox.Show("номер телефона уже есть в базе или набран не правильно, номер не будет изменён");
+                        _person.phone.phone = phone;
+                        _dataBaseWorker.ChangePerson(_person);
                     }
-                    _dataBaseWorker.AddPerson(_person);
+                    else _dataBaseWorker.ChangePerson(_person);
                 }
-                else _dataBaseWorker.ChangePerson(_person);
                
                 Close();
             }
