@@ -32,7 +32,7 @@ namespace Directory
             _dataBaseWorker = new EntityWorker();
 
 
-            var phones = _dataBaseWorker.GetPhones();
+            var phones = _dataBaseWorker._phones;
             ListPhones.ItemsSource = phones;
 
         }
