@@ -58,7 +58,7 @@
 
         </ListView>
         <Button Content="добавить пользователя" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" Click="NewPerson_Click" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FindInfo" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Button Content="обновить данные" HorizontalAlignment="Left" Margin="10,276,0,0" VerticalAlignment="Top" Width="120" Click="Update_List_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
